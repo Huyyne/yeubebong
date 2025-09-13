@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yêu Bé Bông 💖</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>💖 Yêu Bé Bông 💖</h1>
+    <p>Bấm nút bên dưới để thấy hiệu ứng ❤️</p>
+    <button onclick="createHeart()">💗 Bấm vào đây!</button>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerText = '💖';
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        }
+
+        // Tạo trái tim bay liên tục
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
